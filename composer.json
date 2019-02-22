@@ -1,0 +1,13 @@
+{
+    "name": "trubiv/ozonb2b",
+    "description": "test",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
