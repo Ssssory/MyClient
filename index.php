@@ -4,5 +4,5 @@ use App\Tool\OzonApi;
 
 $WGuzzle = new OzonApi();
 echo "<pre>";
-print_r($WGuzzle->getCategoriesTree(5621031));
+print_r($WGuzzle->getCategoriesTree());
 echo "</pre>";

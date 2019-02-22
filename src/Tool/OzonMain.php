@@ -11,24 +11,23 @@ class OzonMain extends MyGuzzleAbstractClass
      */
     private $guzzle;
 
-    private $devSite = "http://cb-api.test.ozon.ru";
-    private $site    = "http://api-seller.ozon.ru";
+    private $devSite     = "http://cb-api.test.ozon.ru";
+    private $site        = "http://api-seller.ozon.ru";
     private $devClientId = 0;
-    private $devApiKey = '1';
-	private $clientId = 0;
-	private $apiKey = '1';
-	protected $header = array();
+    private $devApiKey   = '1';
+	private $clientId    = 0;
+	private $apiKey      = '1';
 
 	public function __construct($env = "prod"){
         if( $env ==  "prod"){
-            $this->header = [
+            $this->headers = [
                 'Client-Id' => $this->clientId,
                 'Api-Key' => $this->apiKey,
                 'Content-type' => "application/json"
             ];
             $this->currentSite = $this->site;
         }elseif ($env ==  "dev"){
-            $this->header = [
+            $this->headers = [
                 'Client-Id' => $this->devClientId,
                 'Api-Key' => $this->devApiKey,
                 'Content-type' => "application/json"
@@ -57,6 +56,10 @@ class OzonMain extends MyGuzzleAbstractClass
         }
     }
     
+    public function setUrl($path)
+    {
+        $this->url = $this->currentSite . $path;
+    }
     public function getJson()
     {
         return $this->json;
@@ -70,7 +73,7 @@ class OzonMain extends MyGuzzleAbstractClass
         $this->json = [];
         $this->param = [];
         $this->requestId = false;
-        $this->methodAPI = false;
+        $this->method = false;
     }
 
     public function getMethod()
