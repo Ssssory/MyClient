@@ -276,7 +276,7 @@ class OzonApi extends OzonMain
         $this->json = [
             'order_id' => $orderId
         ];
-        $this->method = "POST";
+        $this->method = "GET";
 
         return $this->push();
     }
@@ -286,7 +286,7 @@ class OzonApi extends OzonMain
         $this->json = [
             'order_number' => $orderNumber
         ];
-        $this->method = "POST";
+        $this->method = "GET";
 
         return $this->push();
     }
