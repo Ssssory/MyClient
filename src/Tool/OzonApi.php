@@ -230,15 +230,10 @@ class OzonApi extends OzonMain
 
         return $this->push();
     }
-//maybe soon they turn on this//19 02 19
-    // public function getProviders(){
-    // 	$this->setUrl() = '/v1/order/shipping-provider/list';
-    // 	$this->method = "POST";
-    // }
     public function getProviders(){
         $this->clearJson();
         $this->setUrl('/v1/shipping-providers');
-        $this->method = "POST";
+        $this->method = "GET";
 
         return $this->push();
     }
